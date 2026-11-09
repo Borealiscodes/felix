@@ -9,7 +9,7 @@ The Ada compiler’s formal engine (gnatprove) does not prove deep theorems from
 
 2. Requirement and Contract Misalignment
 
-A foundational truth of formal methods is that a language can only prove that the code strictly matches the contract—it cannot prove that the contract itself is correct. [1] (/goto?url=CAESnAEBxCJF1zRkqPqHQtmKSss4ua4xWmav3r5vV_ULXA-WMA7ax0jmmCgrfsdNIiuRIOjRg7LNy4JgPpHmTt5V3wm3ibpN-lsktd_5AlHuPMjx8-R6y-p_XTty0j3brisa4U0HWhgmLS71u6o2uPNDGTYcHcrY0TwjujRZ1jr1GNHuUzBo_nv4KdzEeAZVDyR_SKAhwioayGwd1i1HC30)
+A foundational truth of formal methods is that a language can only prove that the code strictly matches the contract—it cannot prove that the contract itself is correct. 
 * Ada’s Blindspot: If an upstream engineer incorrectly maps the mathematical boundaries of the E₈ spinor split inside their Ada specification (.ads), gnatprove will happily confirm the compiled code matches that flawed contract flawlessly 
 * The Coq Invariant: Coq requires developers to build the complete mathematical space from foundational inductive types up. It catches semantic flaws, distance warpings, and Flyxion-style metric collapses that occur because the developer's high-level logic was broken, a check that an inline type-checker cannot perform.
 * 
