@@ -12,6 +12,9 @@ Specifically, static compilation checks cannot natively compute high-dimensional
 1. The SMT Decidability Barrier and Complexity Bounds
 
 The core software loop relies on automated SMT verifiers to check localized invariants over the signed graph Laplacian (\(L^\sigma = D - A^\sigma\)) and discrete ternary packing [1.12]. While automated first-order logic solvers are highly effective at proving linear constraints, high-dimensional manifold tracking introduces non-linear variables that alter the underlying decidability space [10.1010/acm.barrett, 10.2139/ssrn.kremer].
+
+<pre>
+                 
                  THE SPECIFICATION ABSTRACTION GAP
                  
   [ Mathematical Space ] ----> Continuous 80D Riemannian Manifold
@@ -22,6 +25,8 @@ The core software loop relies on automated SMT verifiers to check localized inva
                                        v
   [ SYSTEMIC RISK ]     ----> Heuristic timeouts force unproved axioms
                               (pragma Assume) to clear compiler warnings.
+
+</pre>
 
 Mathematical Formalization
 
