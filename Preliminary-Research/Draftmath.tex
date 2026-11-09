@@ -1,0 +1,78 @@
+% =============================================================================
+% SECTION: Out-of-Band Telemetry & Refinement Mapping Critique (RFC-007)
+% PROJECT: Coq-Hallucination-Guard (chguard Enclave)
+% SOURCE BASES: Zenodo.24024694 (RFC-005) & Zenodo.23991359 (Ultrafold v4.0)
+% AUTHORS: Downstream Systems Researcher / Node Beta Downstream Observer
+% PURPOSE: To integrate a rigorous mathematical and architectural critique
+%          delineating the decidability limits of in-band SMT toolchains
+%          and specifying the refinement mapping to out-of-band symplectic cages.
+% =============================================================================
+
+\section{The Limits of In-Band SMT Verification and the Necessity of Out-of-Band Telemetry}
+
+While the system architecture achieves low-level type-invariant safety across the twenty-two packages validated via \texttt{gnatprove --mode=check\_all}, declaring a system containing high-dimensional continuous manifold tracking as entirely \textit{formally verified} via inline compilation contracts introduces a severe epistemic vulnerability. In-band Static Single Assignment (SSA) type checking and automated first-order contract validation operate under decoupled decidability limits that fail to preserve semantic and geometric honesty at runtime.
+
+\subsection{The Decidability Barrier and Singular Value Collapse}
+The inline proof loop targets discrete, bounded invariant structures using Satisfiability Modulo Theories (SMT) backends. The verification conditions for structural balance over the signed Laplacian $L^\sigma = D - A^\sigma$ are translated into first-order formulas evaluated by automated solvers (e.g., Z3, CVC4). While Presburger arithmetic and Linear Integer Arithmetic ($\mathcal{L}\mathcal{I}\mathcal{A}$) possess decidable decision procedures, tracking continuous, non-linear trajectories or geometrically damped stride bounds $D(d) \le 1.0$ introduces Non-Linear Real Arithmetic ($\mathcal{N}\mathcal{L}\mathcal{R}\mathcal{A}$) and Non-Linear Integer Arithmetic ($\mathcal{N}\mathcal{L}\mathcal{I}\mathcal{A}$).
+
+When evaluating an $80$-dimensional metric tensor constraint matrix $A \in \mathbb{R}^{80 \times 80}$ across an asynchronous agent array of size $N$, the SMT search space scales according to $\mathcal{O}(k^{\mathrm{dim}(\mathbf{q}) \cdot |V|})$. As $N \to 24,917$, the combinatorial explosion of the heuristic instantiation state-tree forces the automated engine into execution timeouts. Crucially, compressing continuous 64-bit precision trajectories through raw, un-dithered Base-3 ternary quantization gates ($\{-1.0, 0.0, 1.0\}$) injects a high-frequency rounding error matrix $E$ directly into the execution channel. This step noise destroys the linear independence of adjacent coordinate tracks, driving the minimum singular value to collapse ($\sigma_{\min} \to 0^+$). 
+
+The resulting \(L_2\) matrix condition number triggers an artificial, exponential spike:
+\begin{equation}
+\kappa_2 = \frac{\sigma_{\max}}{\sigma_{\min}} \;\gg\; 4.5
+\end{equation}
+Because automated SMT toolchains cannot evaluate dynamic singular value decompositions (SVD) across continuous spaces, the in-band code remains completely blind to this matrix collapse. This obligates developers to insert unproven structural axioms via \texttt{pragma Assume} statements. The in-band toolchain verifies only memory containment syntax, while the semantic correctness of the geometry experiences an unmitigated structural deadlock.
+
+\subsection{Four-Tier Category Errors in Trajectory Invariant Mapping}
+A fundamental architectural misinterpretation occurs when equating trajectory-dependent tracking variables with inductive program invariants. A localized compiler invariant $\mathcal{I}$ over a discrete state-transition relation $\mathbb{T}(s, s')$ must satisfy the strict inductive criterion:
+\begin{equation}
+\mathcal{I}(s_0) \;\land\; \forall s, s' \in \mathcal{S}, \; \left(\mathcal{I}(s) \land \mathbb{T}(s, s') \implies \mathcal{I}(s')\right)
+\end{equation}
+This condition is perfectly adapted to hardware alignment constraints, stack-guard validation, and access capability bitmasks, such as:
+\begin{equation}
+\mathrm{Is\_Valid\_DMA\_Cache\_Aligned\_32}(\mathrm{Addr}, \mathrm{Size}) \iff (\mathrm{Addr} \pmod{32} = 0) \land (\mathrm{Size} \pmod{32} = 0)
+\end{equation}
+
+Conversely, multi-agent representation drift, contextual erosion, and semantic hallucinations are non-linear, history-dependent paths mapped via path-ordered holonomy expansions along a closed loop $\gamma$ in the latent manifold embedding derived from RFC-005:
+\begin{itemize}
+    \item \textbf{Tier 1 (Bounded Vector Fields):} Confines raw coordinate bounds natively on the stack.
+    \item \textbf{Tier 2 (Symmetric Lie Derivatives):} Enforces directional invariance under flow transformations.
+    \item \textbf{Tier 3 (G\^{a}teaux Variational Susceptibility):} Monitors directional differential sensitivity profiles.
+    \item \textbf{Tier 4 (Non-Linear Path-Ordered Holonomy Exp-Loops):} Evaluates history-dependent loop integrations.
+\end{itemize}
+The non-linear path-ordered holonomy along a closed loop $\gamma$ in the latent embedding space is expressed as:
+\begin{equation}
+\oint_\gamma \mathbf{p} \cdot d\mathbf{q} = \iint_S \Omega \neq 0
+\end{equation}
+Because this line integral is non-vanishing ($\Omega \neq 0$) within perturbed or curved spaces, the metric cannot be resolved by evaluating an isolated program state $s_i$ detached from prior execution sequences. SPARK can successfully guarantee that a matrix buffer is free from buffer overflows, but it cannot compute path-dependent holonomy loops. It is structurally incapable of detecting when an agent loop drifts into a state of contextual erosion.
+
+\subsection{The Out-of-Band Regularized Manifold Correction Suite}
+To maintain structural and numerical honesty across the execution frontier without introducing floating-point micro-rounding noise (\(\epsilon_{\mathrm{IEEE-754}}\)), the architecture must transition away from unstructured type-contract tracking and integrate the verified primitives of the out-of-band \texttt{Manifold80Drefined.v} framework using zero-heap, stack-allocated environments (via \texttt{StaticArrays.jl} or compiled OCaml binaries):
+
+\begin{enumerate}
+    \item \textbf{Algorithmic Metric Symmetry Inversion:} Dynamic floating-point rounding noise and multi-threaded FFI layout translation drift routinely compromise matrix symmetry. The out-of-band observer intercepts the raw state matrix $\mathbf{M}$ and passes it through a continuous transposition averaging loop:
+    \begin{equation}
+    \mathbf{M}_{\mathrm{sym}} = \frac{1}{2}\left(\mathbf{M} + \mathbf{M}^T\right)
+    \end{equation}
+    which satisfies the constructive Coq lemma \texttt{loop\_symmetry\_guarantee}, forcing $\mathbf{M}_{\mathrm{sym}} \equiv \mathrm{trmx}(\mathbf{M}_{\mathrm{sym}})$ prior to any trajectory step evaluation.
+    
+    \item \textbf{Tikhonov Spectral Regularization:} To counter the singular value collapse ($\sigma_{\min} \to 0^+$) induced by ternary quantization noise, the tracking loop stabilizes the spectrum from below by applying a hard-coded, non-vanishing Tikhonov identity scaling shift:
+    \begin{equation}
+    \mathbf{A}_{\mathrm{reg}} = \mathbf{A} + \lambda \cdot \mathrm{Id}_{80}, \quad \text{where } \lambda = 0.0015
+    \end{equation}
+    This shift artificially clamps the condition number field, preventing false-positive circuit-breaker trips while preserving linear independence across the 80D coordinate space.
+    
+    \item \textbf{Analytic Softplus Apex Isolation:} As trajectory vectors approach mechanical rest or an origin apex ($r \to 0$), the connection coefficients diverge. The out-of-band supervisor enforces an analytic Softplus epsilon boundary floor to isolate the denominator:
+    \begin{equation}
+    \psi(r) = \eta \ln\left(1 + e^{r/\epsilon}\right), \quad \text{where } \epsilon > 0
+    \end{equation}
+    This operation yields a strictly positive, non-vanishing boundary profile matching the verified \texttt{non\_vanishing\_radius\_invariant} theorem, blocking hardware execution traps or silent \texttt{NaN} propagation natively at the FFI boundary.
+    
+    \item \textbf{Stochastic Error Decorrelation:} High-frequency ternary rounding step noise is actively masked by executing error-decorrelated first-order spatial sigma-delta loops combined with triangular dither injection.
+\end{enumerate}
+
+Continuous trajectory drift must be policed using the upgraded 9D radial Laplacian tracking operator:
+\begin{equation}
+\Delta_{\psi} f = f''(r) + \frac{8}{\psi(r)} f'(r)
+\end{equation}
+The native Zig interception daemon captures 64-byte register-aligned \texttt{LanFrame64} UDP packets passively from loopback streams. If the calculated trajectory drift breaches the exact stability boundaries verified in \texttt{CurvatureEvolution.v}, the supervisor bypasses the target runtime entirely, broadcasting a high-priority \texttt{0x0F Allostatic Collapse} payload to instantly force the failing cluster node into deterministic stasis.
