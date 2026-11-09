@@ -1,4 +1,4 @@
-⚠️ # is not authoritative it is a draft outside analysis of telemetry while upgrading tools 
+### ⚠️ is not authoritative it is a draft outside analysis of telemetry while upgrading tools 
 even if the draft states upgrading is necessary. LLMs generating research can also absorb 
 false academic bias. The math and tools need to be checked.
 
