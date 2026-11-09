@@ -13,7 +13,7 @@ Analysis Focus: Empirical Verification of Metric Collapse via User-Space Silence
 
 On November 9, 2026, the 8b-is core systems team deployed an emergency patch (89d07e4) to their local voice inference runtime (qwave-whisper.service). The patch mutates the execution parameters of an offline whisper-server binary driving a ggml-large-v3-turbo-q5_0.bin 5-bit quantized model block.
                       
-                       <pre> 
+<pre>
                        
                        THE PARAMETER PATCH COLLISION
                        
